@@ -1,7 +1,10 @@
 package com.marzio.curso.boot.domain;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+
+import java.util.List;
+
+import javax.persistence.*;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -23,6 +26,9 @@ public class Cargo extends AbstractEntity<Long> {
 	@ManyToOne
 	@JoinColumn(name = "id_departamento_fk")
 	private Departamento departamento;
+	
+	@OneToMany(mappedBy = "cargo")//a classe cargo é o lado fraco do relacionamento
+	private List<Funcionario> funcionarios;
 	
 	
 
