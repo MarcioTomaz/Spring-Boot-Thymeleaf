@@ -4,7 +4,13 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
+@EqualsAndHashCode
 @SuppressWarnings("serial")
 @MappedSuperclass
 public abstract class AbstractEntity <ID extends Serializable> implements Serializable{
@@ -13,15 +19,15 @@ public abstract class AbstractEntity <ID extends Serializable> implements Serial
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private ID id;
 
-	public ID getId() {
+	/*public ID getId() {
 		return id;
 	}
 
 	public void setId(ID id) {
 		this.id = id;
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -45,6 +51,7 @@ public abstract class AbstractEntity <ID extends Serializable> implements Serial
 			return false;
 		return true;
 	}
+	*/
 
 	@Override
 	public String toString() {
