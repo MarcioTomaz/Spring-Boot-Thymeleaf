@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 
 import com.marzio.curso.boot.domain.Funcionario;
 
-@Repository
 public interface FuncionarioDao {
 	
 	void save (Funcionario funcionario);
