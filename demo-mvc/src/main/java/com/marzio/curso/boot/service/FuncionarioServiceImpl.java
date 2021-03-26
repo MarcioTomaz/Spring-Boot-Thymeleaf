@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.marzio.curso.boot.dao.FuncionarioDao;
 import com.marzio.curso.boot.domain.Funcionario;
-
-import dao.FuncionarioDao;
 
 @Service
 @Transactional(readOnly = true)

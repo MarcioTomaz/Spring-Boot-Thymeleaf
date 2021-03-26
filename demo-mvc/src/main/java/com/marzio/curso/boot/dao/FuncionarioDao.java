@@ -1,8 +1,6 @@
-package dao;
+package com.marzio.curso.boot.dao;
 
 import java.util.List;
-
-import org.springframework.stereotype.Repository;
 
 import com.marzio.curso.boot.domain.Funcionario;
 

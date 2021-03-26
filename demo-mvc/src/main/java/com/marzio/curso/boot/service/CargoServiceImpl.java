@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.marzio.curso.boot.dao.CargoDao;
 import com.marzio.curso.boot.domain.Cargo;
 
-import dao.CargoDao;
-
-@Service
-@Transactional(readOnly = false)
-public class CargoServiceImpl implements CargoService{
+@Service @Transactional(readOnly = false)
+public class CargoServiceImpl implements CargoService {
 	
 	@Autowired
 	private CargoDao dao;
@@ -32,15 +30,13 @@ public class CargoServiceImpl implements CargoService{
 		dao.delete(id);		
 	}
 
-	@Override
-	@Transactional(readOnly = true)
+	@Override @Transactional(readOnly = true)
 	public Cargo buscarPorId(Long id) {
 		
 		return dao.findById(id);
 	}
 
-	@Override
-	@Transactional(readOnly = true)
+	@Override @Transactional(readOnly = true)
 	public List<Cargo> buscarTodos() {
 		
 		return dao.findAll();

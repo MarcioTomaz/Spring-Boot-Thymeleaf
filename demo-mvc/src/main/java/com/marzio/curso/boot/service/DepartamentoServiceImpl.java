@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.marzio.curso.boot.dao.DepartamentoDao;
 import com.marzio.curso.boot.domain.Departamento;
-
-import dao.DepartamentoDao;
 
 @Service
 public class DepartamentoServiceImpl implements DepartamentoService{

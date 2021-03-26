@@ -1,4 +1,4 @@
-package dao;
+package com.marzio.curso.boot.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;

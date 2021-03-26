@@ -5,7 +5,7 @@ import java.util.List;
 import com.marzio.curso.boot.domain.Cargo;
 
 public interface CargoService {
-	
+
 	void salvar(Cargo cargo);
 	
 	void editar(Cargo cargo);
@@ -15,5 +15,4 @@ public interface CargoService {
 	Cargo buscarPorId(Long id);
 	
 	List<Cargo> buscarTodos();
-
 }
