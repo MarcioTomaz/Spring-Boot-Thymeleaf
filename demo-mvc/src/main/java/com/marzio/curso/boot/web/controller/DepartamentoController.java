@@ -62,8 +62,6 @@ public class DepartamentoController {
 		}else {
 			departamentoService.excluir(id);
 			model.addAttribute("success", "Departamento removido com sucesso.");
-
-
 		}	
 		return listar(model);		
 	}
