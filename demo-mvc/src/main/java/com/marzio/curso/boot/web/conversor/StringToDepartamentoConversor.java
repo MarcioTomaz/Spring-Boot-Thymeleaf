@@ -8,7 +8,7 @@ import com.marzio.curso.boot.domain.Departamento;
 import com.marzio.curso.boot.service.DepartamentoService;
 
 @Component
-public class StringToDepartamentoConverter implements Converter<String, Departamento>{
+public class StringToDepartamentoConversor implements Converter<String, Departamento>{
 	
 	@Autowired
 	private DepartamentoService departamentoService;
