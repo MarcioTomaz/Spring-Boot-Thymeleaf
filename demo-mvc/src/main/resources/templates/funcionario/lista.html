@@ -33,6 +33,7 @@
 					aria-controls="collapseData">Datas
 			</button>
 		</p>
+
 		<div class="row">
 			<div class="col">
 				<div class="collapse" id="collapseNome">
@@ -55,7 +56,7 @@
 					<nav class="navbar navbar-light bg-light">
 						<form class="form-inline" method="GET" th:action="@{/funcionarios/buscar/cargo}">
 							<select class="form-control mr-sm-2" th:name="id" aria-label="Search">
-								<option value="">Cargo</option>
+								<option value="">Selecione...</option>
 								<option th:each="cargo : ${cargos}" th:value="${cargo.id}" th:text="${cargo.nome}">Auxiliar Contábil</option>
 							</select>
 							<button class="btn btn-outline-success my-2 my-sm-0">Search</button>

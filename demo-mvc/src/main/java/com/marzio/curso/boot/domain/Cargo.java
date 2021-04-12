@@ -29,7 +29,5 @@ public class Cargo extends AbstractEntity<Long> {
 	
 	@OneToMany(mappedBy = "cargo")//a classe cargo é o lado fraco do relacionamento
 	private List<Funcionario> funcionarios;
-	
-	
 
 }
