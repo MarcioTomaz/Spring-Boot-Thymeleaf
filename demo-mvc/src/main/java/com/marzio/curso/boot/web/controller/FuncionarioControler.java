@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -16,6 +17,7 @@ import com.marzio.curso.boot.domain.Funcionario;
 import com.marzio.curso.boot.service.CargoService;
 import com.marzio.curso.boot.service.FuncionarioService;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -46,7 +48,12 @@ public class FuncionarioControler {
 	}
 	
 	@PostMapping("/salvar")
-	public String salvar(Funcionario funcionario, RedirectAttributes attr ) {
+	public String salvar(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attr ) {
+
+		if(result.hasErrors()){
+			return "/funcionario/cadastro";
+		}
+
 		funcionarioService.salvar(funcionario);
 		attr.addFlashAttribute("success","Funcionário inserido com sucesso.");
 
@@ -60,7 +67,11 @@ public class FuncionarioControler {
 	}
 
 	@PostMapping("/editar")
-	public String editar(Funcionario funcionario, RedirectAttributes attr) {
+	public String editar(@Valid Funcionario funcionario,BindingResult result, RedirectAttributes attr) {
+
+		if(result.hasErrors()){
+			return "/funcionarios/cadastro";
+		}
 
 		funcionarioService.editar(funcionario);
 		attr.addFlashAttribute("success","Funcionario editado com sucesso");
