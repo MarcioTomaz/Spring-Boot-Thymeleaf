@@ -79,7 +79,7 @@ public class FuncionarioControler {
 	public String editar(@Valid Funcionario funcionario,BindingResult result, RedirectAttributes attr) {
 
 		if(result.hasErrors()){
-			return "/funcionarios/cadastro";
+			return "/funcionario/cadastro";
 		}
 
 		funcionarioService.editar(funcionario);
@@ -88,6 +88,7 @@ public class FuncionarioControler {
 		return "redirect:/funcionarios/cadastrar";
 
 	}
+
 
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
