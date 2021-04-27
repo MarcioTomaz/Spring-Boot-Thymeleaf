@@ -49,12 +49,12 @@
 	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
 	<script type="text/javascript">
 	
-		var url = 'http://' + location.host + "/";
+		var url = '';
 		   
 
 		$('button[id*="btn_"]').click( function(){
 		
-		url = url + $(this).attr('id').split("_")[1];
+		url = "/" + $(this).attr('id').split("_")[1];
 		
 		});
 		
