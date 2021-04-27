@@ -22,28 +22,55 @@
 			<div id="list-home" class="row">
 				<div class="col-4">
 					<div class="list-group" id="list-tab" role="tablist">
+					
 						<a class="list-group-item list-group-item-action active"
+							id="list-sobre" data-toggle="list" href="#sobre"
+							role="tab" aria-controls="spring-boot">Sobre o curso
+						</a>
+							
+						<a class="list-group-item list-group-item-action"
 							id="list-spring-boot-list" data-toggle="list" href="#spring-boot"
-							role="tab" aria-controls="spring-boot">Spring-Boot</a> <a
+							role="tab" aria-controls="spring-boot">Spring-Boot</a>
+						<a
 							class="list-group-item list-group-item-action" id="list-sts-list"
 							data-toggle="list" href="#sts" role="tab" aria-controls="sts">Spring
-							Tool Suite</a> <a class="list-group-item list-group-item-action"
+							Tool Suite
+						</a>
+						
+						<a class="list-group-item list-group-item-action"
 							id="list-thymeleaf-list" data-toggle="list" href="#thymeleaf"
-							role="tab" aria-controls="thymeleaf">Thymeleaf</a> <a
+							role="tab" aria-controls="thymeleaf">Thymeleaf
+						</a> 
+						
+						<a
 							class="list-group-item list-group-item-action"
 							id="list-webjars-list" data-toggle="list" href="#webjars"
-							role="tab" aria-controls="webjars">WebJars</a> <a
+							role="tab" aria-controls="webjars">WebJars
+						</a>
+
+						<a
 							class="list-group-item list-group-item-action"
 							id="list-hibernate-list" data-toggle="list" href="#hibernate"
-							role="tab" aria-controls="hibernate">Hibernate</a> <a
+							role="tab" aria-controls="hibernate">Hibernate
+						</a> 
+						
+						<a
 							class="list-group-item list-group-item-action"
 							id="list-bootstrap-list" data-toggle="list" href="#bootstrap"
-							role="tab" aria-controls="bootstrap">Bootstrap 4</a>
+							role="tab" aria-controls="bootstrap">Bootstrap 4
+						</a>
 					</div>
 				</div>
 				<div class="col-8">
 					<div class="tab-content" id="nav-tabContent">
-						<div class="tab-pane fade show active" id="spring-boot"
+					
+						<div class="tab-pane fade show active" id="sobre" 
+							 role="tabpanel" arial-labelledby="list-sobre-list">						 
+							Curso de Primeiros Passos no Desenvolvimento Web com Spring-Boot, MVC, JPA, Thymeleaf e Heroku do professor 
+							Marcio Ballem.
+							Para mais informações: <a href="https:udemy.com/course/spring-boot-mvc-com-thymeleaf/" target="_blank">Clique aqui</a>
+						</div>
+						<div class="tab-pane fade  " id="spring-boot"
 							role="tabpanel" aria-labelledby="list-spring-boot-list">
 							<a href="https://projects.spring.io/spring-boot/">Spring Boot</a>
 							makes it easy to create stand-alone, production-grade Spring

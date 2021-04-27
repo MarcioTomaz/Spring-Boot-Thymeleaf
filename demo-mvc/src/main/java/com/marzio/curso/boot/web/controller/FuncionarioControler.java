@@ -44,7 +44,7 @@ public class FuncionarioControler {
 	@GetMapping("/cadastrar")
 	public ModelAndView cadastrar(Funcionario funcionario) {
 
-		ModelAndView mv = new ModelAndView("/funcionario/cadastro");
+		ModelAndView mv = new ModelAndView("funcionario/cadastro");
 
 		return mv;
 	}
@@ -53,14 +53,14 @@ public class FuncionarioControler {
 	public String listar(ModelMap model) {
 
 		model.addAttribute("funcionarios",funcionarioService.buscarTodos());
-		return "/funcionario/lista";
+		return "funcionario/lista";
 	}
 	
 	@PostMapping("/salvar")
 	public String salvar(@Valid Funcionario funcionario, BindingResult result, RedirectAttributes attr ) {
 
 		if(result.hasErrors()){
-			return "/funcionario/cadastro";
+			return "funcionario/cadastro";
 		}
 
 		funcionarioService.salvar(funcionario);
@@ -79,7 +79,7 @@ public class FuncionarioControler {
 	public String editar(@Valid Funcionario funcionario,BindingResult result, RedirectAttributes attr) {
 
 		if(result.hasErrors()){
-			return "/funcionario/cadastro";
+			return "funcionario/cadastro";
 		}
 
 		funcionarioService.editar(funcionario);
@@ -102,7 +102,7 @@ public class FuncionarioControler {
 	@GetMapping("/buscar/nome")
 	public ModelAndView getPorNome(@RequestParam("nome") String nome){
 
-		ModelAndView mv = new ModelAndView("/funcionario/lista");
+		ModelAndView mv = new ModelAndView("funcionario/lista");
 
 		mv.addObject("funcionarios",funcionarioService.buscarPorNome(nome));
 
@@ -112,7 +112,7 @@ public class FuncionarioControler {
 	@GetMapping("/buscar/cargo")
 	public ModelAndView getPorCargo(@RequestParam("id") Long id){
 
-		ModelAndView mv = new ModelAndView("/funcionario/lista");
+		ModelAndView mv = new ModelAndView("funcionario/lista");
 
 		mv.addObject("funcionarios",funcionarioService.buscarPorCargo(id));
 
@@ -123,7 +123,7 @@ public class FuncionarioControler {
 	public ModelAndView getPorDatas(@RequestParam(name = "entrada",  required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)LocalDate entrada,
 									@RequestParam(name = "saida",required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate saida){
 
-		ModelAndView mv = new ModelAndView("/funcionario/lista");
+		ModelAndView mv = new ModelAndView("funcionario/lista");
 
 		mv.addObject("funcionarios",funcionarioService.buscarPorDatas(entrada,saida));
 
